@@ -8,8 +8,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         local:MvxBind="Text Hello" />
-    <custombindingsample.droid.controls.CompoundView
+    <custombindingsample.droid.controls.EditTextFormView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Label Hello" />
+        local:MvxBind="Label Hello; Text Hello" />
 </LinearLayout>

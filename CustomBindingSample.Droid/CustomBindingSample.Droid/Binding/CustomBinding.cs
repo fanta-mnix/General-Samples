@@ -1,13 +1,19 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Cirrious.MvvmCross.Binding;
 using Cirrious.MvvmCross.Binding.Droid.Target;
-using CustomBindingSample.Droid.Controls;
 
 namespace CustomBindingSample.Droid.Binding
 {
-    public abstract class CustomBinding<TSource, TTarget> : MvxAndroidTargetBinding where TSource : class
+    public abstract class CustomBinding<TView, TTarget> : MvxAndroidTargetBinding where TView : View
     {
         protected bool Subscribed { get; private set; }
 
@@ -16,9 +22,9 @@ namespace CustomBindingSample.Droid.Binding
             get { return typeof(TTarget); }
         }
 
-        protected TSource Source
+        protected TView View
         {
-            get { return (TSource)Target; }
+            get { return (TView)Target; }
         }
 
         public override MvxBindingMode DefaultMode
@@ -26,7 +32,7 @@ namespace CustomBindingSample.Droid.Binding
             get { return MvxBindingMode.TwoWay; }
         }
 
-        public CustomBinding(TSource source)
+        public CustomBinding(TView source)
             : base(source)
         {
         }
@@ -63,4 +69,3 @@ namespace CustomBindingSample.Droid.Binding
         }
     }
 }
-

@@ -19,7 +19,8 @@ namespace CustomBindingSample.Droid
         {
             base.FillTargetFactories(registry);
 
-            registry.RegisterFactory(new MvxCustomBindingFactory<CompoundView>("Label", (view) => new CompoundViewBinding(view)));
+            registry.RegisterFactory(new MvxCustomBindingFactory<CompositeFormView>("Label", (view) => new FormLabelBinding(view)));
+            registry.RegisterFactory(new MvxCustomBindingFactory<EditTextFormView>("Text", (view) => new FormTextBinding(view)));
         }
 
         protected override IMvxApplication CreateApp()
