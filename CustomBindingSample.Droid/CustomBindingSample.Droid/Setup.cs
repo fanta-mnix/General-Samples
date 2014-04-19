@@ -21,6 +21,8 @@ namespace CustomBindingSample.Droid
 
             registry.RegisterFactory(new MvxCustomBindingFactory<CompositeFormView>("Label", (view) => new FormLabelBinding(view)));
             registry.RegisterFactory(new MvxCustomBindingFactory<EditTextFormView>("Text", (view) => new FormTextBinding(view)));
+            registry.RegisterFactory(new MvxCustomBindingFactory<SpinnerFormView>("ItemsSource", (view) => new FormSpinnerItemsBinding(view)));
+            registry.RegisterFactory(new MvxCustomBindingFactory<SpinnerFormView>("SelectedItem", (view) => new FormSpinnerSelectionBinding(view)));
         }
 
         protected override IMvxApplication CreateApp()

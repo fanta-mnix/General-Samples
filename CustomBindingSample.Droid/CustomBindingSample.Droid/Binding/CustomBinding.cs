@@ -24,7 +24,7 @@ namespace CustomBindingSample.Droid.Binding
 
         protected TView View
         {
-            get { return (TView)Target; }
+            get { return Target as TView; }
         }
 
         public override MvxBindingMode DefaultMode

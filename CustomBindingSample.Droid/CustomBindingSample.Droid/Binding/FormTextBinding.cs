@@ -26,19 +26,23 @@ namespace CustomBindingSample.Droid.Binding
 
         protected override bool SubscribeToCustomEvents()
         {
-            ((EditText)View.FieldView).TextChanged += HandleTextChanged;
+            if (View == null)
+            {
+                return false;
+            }
+            ((EditText)View.FieldView).AfterTextChanged += HandleTextChanged;
             return true;
+        }
+
+        private void HandleTextChanged(object sender, Android.Text.AfterTextChangedEventArgs e)
+        {
+            if (View == null) return;
+            FireValueChanged(View.Text);
         }
 
         protected override void UnsubscribeToCustomEvents()
         {
-            ((EditText)View.FieldView).TextChanged -= HandleTextChanged;
-        }
-
-        private void HandleTextChanged(object sender, Android.Text.TextChangedEventArgs e)
-        {
-            if (View == null) return;
-            FireValueChanged(View.Text);
+            ((EditText)View.FieldView).AfterTextChanged -= HandleTextChanged;
         }
     }
 }

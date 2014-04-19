@@ -91,11 +91,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Binding\FormSpinnerSelectionBinding.cs" />
+    <Compile Include="Binding\FormSpinnerItemsBinding.cs" />
     <Compile Include="Binding\FormTextBinding.cs" />
     <Compile Include="Binding\CustomBinding.cs" />
     <Compile Include="Binding\FormLabelBinding.cs" />
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
     <Compile Include="Controls\CompositeFormView.cs" />
+    <Compile Include="Controls\SpinnerFormView.cs" />
     <Compile Include="Controls\EditTextFormView.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
@@ -114,6 +117,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\Layout\EditTextFormView.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\Layout\SpinnerFormView.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
